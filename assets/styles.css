@@ -1,0 +1,329 @@
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+
+  --body-color: #111111;
+  --text-color: #ffffff;
+  --light-text: #7D7D7D;
+  --button-color:#262626;
+  
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+
+  --body-font: "JetBrains Mono", monospace;
+  --biggest-font-size: 2rem;
+  --h1-font-size: 2rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 1rem;
+  --small-font-size: .8rem;
+  --smaller-font-size: .75rem;
+  --tiny-font-size: .6rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */ /*
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+    --tiny-font-size: .688rem;
+  }
+}*/
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: background .4s; /* for dark mode animation */
+}
+
+h1, h2, h3 {
+  color: var(--title-color);
+  font-family: var(--title-font);
+  font-weight: var(--font-medium);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== HEADER & NAV ===============*/
+.lander{
+  height: 100vh;
+}
+.nav{
+    text-align: center;
+    padding:3rem 3rem;  
+    width: 100%;  
+}
+.nav-list{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.nav-link
+{
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: var(--h3-font-size);
+}
+
+
+/*=============== HOME IMAGE AND DESCRIPTION ===============*/
+
+.home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+  padding-top: 2rem;
+  align-items: center;
+}
+
+.user-img{
+  max-width: 20rem;
+}
+
+.user-title{
+font-size: var(--h1-font-size);
+width: 20rem;
+
+}
+.divider{
+  font-size: var(--h3-font-size);
+  width: 20rem;
+}
+.user-desc{
+  font-size: var(--h3-font-size);
+  width: 20rem;
+  padding-top: 1.5rem;
+}
+.user-links{
+  padding-top: 2rem;
+}
+.home-link{
+  display: flex;
+  gap: 2rem;
+}
+.link-item{
+  font-size: var(--h3-font-size);
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/*=============== ABOUT SECTION===============*/
+
+
+.section{
+  width: 85vw;
+  align-items: center;
+  margin: auto;
+}
+
+.title{
+  font-size: var(--h1-font-size);
+  padding: 2rem 0;
+}
+
+.about-info{
+  text-align: justify;
+}
+
+/*=============== ABOUT TIMELINE ===============*/
+
+
+.timeline {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.timeline-container {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.timeline-card {
+  text-align: left;
+  width: 6rem;
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-icon {
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  background-color: var(--button-color);
+  justify-content: center;
+  padding: 5px;
+}
+
+.timeline-line {
+  height: 2px;
+  background: #ffffff;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0) 90%);  
+  flex-grow: 1;
+}
+
+.timeline-content h3 {
+  font-weight: bold;
+  color: #aaa;
+  font-size: var(--smaller-font-size);
+}
+
+.timeline-content p {
+  margin: 0;
+  font-size: var(--smaller-font-size);
+  color: #fff;
+  width: 6rem;
+}
+
+
+/*=============== EVENTS ===============*/
+
+.events {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: #111;
+  border: 1px solid #444;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 22rem;
+  color: white;
+  margin: 1rem;
+}
+
+.card-image img {
+  width: 500rem;
+  height: auto;
+  display: block;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h2 {
+  font-size: 1.5rem;
+  margin: 0 0 10px;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  color: #ccc;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Show 3 lines max */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+.skill-icons{
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .skills-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-box {
+      display: inline-flex;
+      align-items: center;
+      background-color: #262626;
+      border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      font-size: var(--normal-font-size);
+    }
+
+    .skill-box i {
+      margin-right: 1rem;
+      font-size: var(--normal-font-size);
+      color: #fff;
+    }
+
+    .contact-link{
+      font-size: var(--h2-font-size);
+    }
+
+    .footer{
+      text-align: center;
+      background-color: #000;
+      padding: 5rem;
+      margin-top: 1rem;
+    }
+
+@media (max-width: 1200px) {
+ 
+  
+}
+@media (max-width: 576px) {
+
+
+}
+@media (max-width: 420px) {
+  
+
+}
+
+
